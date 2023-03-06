@@ -16,9 +16,7 @@ func main() {
 }
 
 func BuildTrigger(w http.ResponseWriter, r *http.Request) {
-	values := r.URL.Query()
-
-	fmt.Printf("BuildTrigger [%v]", len(values))
+	fmt.Printf("BuildTrigger [%v]", len(r.Form))
 	fmt.Printf("BuildTrigger [%s]", r.RequestURI)
 	var empty Empty
 	result, err := json.Marshal(empty)
