@@ -60,6 +60,7 @@ func GetBuildTrigger(w http.ResponseWriter, r *http.Request) {
 			}
 			builds.Builds = append(builds.Builds, &buildPhase)
 		}
+		triggers = make([]string, 0)
 	}
 	result, err := json.Marshal(builds)
 	if err != nil {
@@ -68,3 +69,5 @@ func GetBuildTrigger(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(string(result))
 	w.Write(result)
 }
+
+//http://192.168.11.3:8080/unity-climber-client-ios/buildWithParameters?token=yingyugang&brunch=develop
